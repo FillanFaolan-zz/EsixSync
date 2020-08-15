@@ -6,5 +6,6 @@ from EsixManager.Interface.BuiltinDownloader import BuiltinDownloader
 STORE_POSTS_INFO = True
 POSTS_INFO_FOLDER = "/.info"
 REPO_SUMMARY_FILE_PATH = "/.summary.json"
-CONFIG_FILE_PATH = os.environ['HOME'] + "/.e6sync.conf.json"
+CONFIG_FILE_PATH = (os.environ["HOME"] + "/.e6sync.conf.json") if os.environ["OS"] != "Windows_NT" else (
+            os.environ["HOMEDRIVE"] + os.environ["HOMEPATH"] + "\\.e6sync.conf.json")
 BUILTIN_DOWNLOADER = BuiltinDownloader()
